@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Tareas{% endblock %}
+
+{% block content %}
+
+
+<h1>tareas Pendientes</h1>
+
+{% for x in tareas %}
+    <a href=" {% url 'obtener_tareas' x.id %}"> {% comment "datos" %} genera el id de manera automatica {% endcomment %}
+    <h2>{{x.titulo}}</h2>
+    <li>{{x.descripcion}}</li>
+    <li>{{x.created}}</li>
+    <li>{{x.user.username}}</li>
+    <li> completado {{x.datecompleted}}</li>
+    </a>
+    {%endfor%}
+{% endblock %}
+

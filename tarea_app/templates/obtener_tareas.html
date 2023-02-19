@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{error}}
+
+<h1>{{tarea1.titulo}}</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{tarea2.as_p}}
+
+    <button type="submit">Actualizar</button>
+</form>
+
+<form action="{% url 'completar_tarea' tarea1.id %}" method="post">
+    {% csrf_token %}
+    <button>
+        Completado
+    </button>
+</form>
+
+<form action="{% url 'eliminar_tarea' tarea1.id %} " method = 'post'>
+    {% csrf_token %}
+    <button>
+        Eliminar
+    </button>
+</form>
+{% endblock  %}
