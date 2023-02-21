@@ -6,16 +6,31 @@
 {% block content %}
 
 
-<h1>tareas Pendientes</h1>
+    <div class="col-md-4 offset-md-3">
+        <h1 class=" display-3 text-center">Tareas</h1>
+    </div>
+
 
 {% for x in tareas %}
-    <a href=" {% url 'obtener_tareas' x.id %}"> {% comment "datos" %} genera el id de manera automatica {% endcomment %}
-    <h2>{{x.titulo}}</h2>
-    <li>{{x.descripcion}}</li>
-    <li>{{x.created}}</li>
-    <li>{{x.user.username}}</li>
-    <li> completado {{x.datecompleted}}</li>
-    </a>
+<div class="row">
+    
+    <div class="col-md-6 offset-md-4">
+    <div class="card  card-body w-50 p-3 ">
+    
+        <a class="list-group-item" href=" {% url 'obtener_tareas' x.id %}"> {% comment "datos" %} genera el id de manera automatica {% endcomment %}
+        {% if x.important %}
+         <h2 class="fw-bold text-success">{{x.titulo}}</h2>
+         {% else %}
+            <h2 class="fw-bold">{{x.titulo}}</h2>
+        {% endif %}
+        <li class="list-group-item">{{x.descripcion}}</li>
+        <li class="list-group-item">{{x.created}}</li>
+        <li class="list-group-item">{{x.user.username}}</li>
+        <li class="list-group-item"> completado {{x.datecompleted}}</li>
+        </a>
+</div>
+</div>
+</div>   
     {%endfor%}
 {% endblock %}
 

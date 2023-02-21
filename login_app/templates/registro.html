@@ -1,17 +1,38 @@
-    
-    {% extends 'base.html' %}
-    
+{% extends 'base.html' %}
 
+{% block title %}Registrarse{% endblock  %}
 
 {% block content %}
-<h1>Login</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    {{error}}
-    {{userform.as_p}}
-    
-    <input type="submit" value="Login">
-</form>
+<main class="container">
 
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+
+            <form method="POST" class="card card-body">
+                <h1 class="text-center">Registrarse</h1>
+                {% csrf_token %}
+                {{error}}
+
+                <div class="md-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Usuario">
+                </div>
+
+                <div class="md-3">
+                    <label for="password1" class="form-label">Password</label>
+                    <input type="password" name="password1" class="form-control" placeholder="Contraseña">
+                </div>
+                <div class="md-3">
+                    <label for="password2" class="form-label">Confirmar Password</label>
+                    <input type="password" name="password2" class="form-control" placeholder="Confirmar Password">
+                </div>
+                <br>
+
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+</main>
 {% endblock %}

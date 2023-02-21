@@ -1,7 +1,48 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
-<h2>Home</h2>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolor quasi id odio. Obcaecati ex culpa facere! Iusto incidunt id nulla quasi numquam, dolor necessitatibus tempore, molestiae laboriosam rerum repudiandae?</div>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% block title %}Home{% endblock  %}
+  
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+{% block content %}
+<body>
+<main class="container py-5">
+    <div class="card">
+
+        <div class="card-body">
+
+            <h2 class="display-1 text-center">Home</h2>
+            <div class="lead"> Este es mi primer poryecto en Django de un CRUD con autenticación de usuarios y con Bootstrap 5.2.1.
+            Totalemente funcional.
+            Proximamente subiré el código a mi repositorio de GitHub.
+            y lo podrás descargar y probarlo en tu máquina local.
+            Mas adelante subire otros proyectos del misms estilo.
+          </div>
+        </div>
+      </div>
+</main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
 {% endblock  %}

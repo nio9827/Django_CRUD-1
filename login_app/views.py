@@ -53,9 +53,9 @@ def tarea(request):  # creamos la vista tarea
 
 @login_required  # decoramos la vista crear_tarea
 def tarea_complet(request):  # creamos la vista tarea_complet
-    tareas = Tareamodel.objects.filter(
-        user=request.user, datecompleted__isnull=False).order_by('-datecompleted')
-    return render(request, "tarea.html", {'tareas': tareas})
+    tareas = Tareamodel.objects.filter( 
+        user=request.user, datecompleted__isnull=False).order_by('-datecompleted') # filtramos las tareas por el usuario que inicio sesion y las ordenamos por fecha de creacion descendente 
+    return render(request, "tarea.html", {'tareas': tareas}) # renderizamos la pagina tarea.html
 
 
 @login_required  # decoramos la vista crear_tarea

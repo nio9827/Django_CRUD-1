@@ -1,28 +1,41 @@
 {% extends 'base.html' %}
 
+{% block title %} Editar{% endblock title %}
 
 {% block content %}
 {{error}}
 
-<h1>{{tarea1.titulo}}</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{tarea2.as_p}}
+<main class="container">
 
-    <button type="submit">Actualizar</button>
-</form>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
 
-<form action="{% url 'completar_tarea' tarea1.id %}" method="post">
-    {% csrf_token %}
-    <button>
-        Completado
-    </button>
-</form>
+            <h1>{{tarea1.titulo}}</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{tarea2.as_p}}
 
-<form action="{% url 'eliminar_tarea' tarea1.id %} " method = 'post'>
-    {% csrf_token %}
-    <button>
-        Eliminar
-    </button>
-</form>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+            <div class="mt-5 d-flex">
+                <form action="{% url 'completar_tarea' tarea1.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-success">
+                        Completado
+                    </button>
+                </form>
+
+                <form action="{% url 'eliminar_tarea' tarea1.id %} " method='post'>
+                    {% csrf_token %}
+
+                    <button class="btn btn-danger">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+
 {% endblock  %}

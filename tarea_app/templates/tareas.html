@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
+{% block title %}Crear Tareas{% endblock title %}
 {% block content %}
-<h1>Crear Tareas</h1>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+<h1 class="text-center display-5">Crear Tareas</h1>
 {{error}}
-<form action="/Tareas/" method="post">
+<form action="/Tareas/" method="post" class="card card-body">
     {% csrf_token %}
     
     {{ tareas.as_p }}
-    <input type="submit" value="Crear">
-</form>
 
+
+    <input type="submit" value="Crear" class="btn btn-primary">
+</form>
+</div>
+</div>
+</main>
 {% endblock %}
